@@ -2,7 +2,7 @@ import os
 from SublimeLinter.lint import Linter
 
 
-class Rubocop(Linter):
+class Standardrb(Linter):
     defaults = {
         'selector': 'source.ruby - text.html - text.haml'
     }
@@ -22,7 +22,7 @@ class Rubocop(Linter):
         if settings.get('use_bundle_exec', False):
             command.extend(['bundle', 'exec'])
 
-        command.extend(['rubocop', '--format', 'emacs'])
+        command.extend(['standardrb', '--format', 'emacs'])
 
         # Set tempfile_suffix so by default a tempfile is passed onto rubocop:
         self.tempfile_suffix = 'rb'
